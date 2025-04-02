@@ -1,0 +1,142 @@
+{
+    "+": [
+        {"input": "1 + 2", "expected": "3"},
+        {"input": "5 + 7", "expected": "12"},
+        {"input": "0 + 0", "expected": "0"},
+        {"input": "-1 + 1", "expected": "0"},
+        {"input": "1.5 + 2.5", "expected": "4"},
+        {"input": "1.56 + 2.85", "expected": "4.410"},
+        {"input": "1.5 + 2", "expected": "3.500"}
+    ],
+    "-": [
+        {"input": "5 - 2", "expected": "3"},
+        {"input": "10 - 7", "expected": "3"},
+        {"input": "0 - 0", "expected": "0"},
+        {"input": "-1 - 1", "expected": "-2"},
+        {"input": "1.5 - 2.5", "expected": "-1"},
+        {"input": "1.56 - 2.85", "expected": "-1.290"},
+        {"input": "1.5 - 2", "expected": "-0.500"}
+    ],
+    "*": [
+        {"input": "2 * 3", "expected": "6"},
+        {"input": "5 * 7", "expected": "35"},
+        {"input": "0 * 0", "expected": "0"},
+        {"input": "-1 * 1", "expected": "-1"},
+        {"input": "1.5 * 2.5", "expected": "3.750"},
+        {"input": "1.56 * 2.85", "expected": "4.446"},
+        {"input": "1.5 * 2", "expected": "3"},
+        {"input": "7.5 * 74.0", "expected": "555"}
+    ],
+    "/": [
+        {"input": "6 / 2", "expected": "3"},
+        {"input": "10 / 5", "expected": "2"},
+        {"input": "0 / 1", "expected": "0"},
+        {"input": "-1 / 1", "expected": "-1"},
+        {"input": "1.5 / 2.5", "expected": "0.600"},
+        {"input": "1.56 / 2.85", "expected": "0.547"},
+        {"input": "1.5 / 2", "expected": "0.750"},
+        {"input": "7.5 / 2.5", "expected": "3"},
+        {"input": "7.5 / 0", "expected": "Error: Division by zero"}
+    ],
+    "^": [
+        {"input": "2 ^ 3", "expected": "8"},
+        {"input": "5 ^ 2", "expected": "25"},
+        {"input": "-1 ^ 1", "expected": "-1"},
+        {"input": "1.5 ^ 2.5", "expected": "2.756"},
+        {"input": "1.56 ^ 2.85", "expected": "3.551"},
+        {"input": "1.5 ^ 2", "expected": "2.250"}
+    ],
+    "//": [
+        {"input": "2 // 3", "expected": "0"},
+        {"input": "5 // 2", "expected": "2"},
+        {"input": "0 // 1", "expected": "0"},
+        {"input": "-1 // 1", "expected": "-1"},
+        {"input": "8 // 0", "expected": "Error: Division by zero"}
+    ],
+    "%": [
+        {"input": "5 % 2", "expected": "1"},
+        {"input": "10 % 3", "expected": "1"},
+        {"input": "0 % 1", "expected": "0"},
+        {"input": "-1 % 1", "expected": "0"},
+        {"input": "8 % 0", "expected": "Error: Division by zero"}
+    ],
+    "P": [
+        {"input": "3 P 1", "expected": "3"},
+        {"input": "5 P 2", "expected": "20"},
+        {"input": "8 P 0", "expected": "1"},
+        {"input": "12 P 8", "expected": "19958400"}
+
+    ],
+    "C": [
+        {"input": "3 C 1", "expected": "3"},
+        {"input": "5 C 2", "expected": "10"},
+        {"input": "8 C 0", "expected": "1"},
+        {"input": "12 C 8", "expected": "495"},
+        {"input": "12 C 12", "expected": "1"}
+    ],
+    "sqrt": [
+        {"input": "sqrt 4", "expected": "2"},
+        {"input": "sqrt 0", "expected": "0"},
+        {"input": "sqrt 4.0001", "expected": "2"},
+        {"input": "sqrt 0.01", "expected": "0.100"},
+        {"input": "sqrt 150.2", "expected": "12.256"},
+        {"input": "sqrt 57.8945", "expected": "7.609"},
+        {"input": "sqrt 81", "expected": "9"},
+        {"input": "sqrt 81.01", "expected": "9"}
+
+    ],
+    "gcd": [
+        {"input": "gcd 1 1", "expected": "1"},
+        {"input": "gcd 5 8", "expected": "1"},
+        {"input": "gcd 24 36", "expected": "12"},
+        {"input": "gcd 120 150", "expected": "30"},
+        {"input": "gcd 150015 3535", "expected": "5"}
+    ],
+    "dec2bin": [
+        {"input": "dec2bin 8", "expected": "1000"},
+        {"input": "dec2bin 0", "expected": "0"},
+        {"input": "dec2bin 1", "expected": "1"},
+        {"input": "dec2bin 255", "expected": "11111111"},
+        {"input": "dec2bin 1024", "expected": "10000000000"},
+        {"input": "dec2bin -0", "expected": "0"},
+        {"input": "dec2bin -35", "expected": "-100011"}
+    ],
+    "bin2dec": [
+        {"input": "bin2dec 1000", "expected": "8"},
+        {"input": "bin2dec 0", "expected": "0"},
+        {"input": "bin2dec 1", "expected": "1"},
+        {"input": "bin2dec 11111111", "expected": "255"},
+        {"input": "bin2dec 10000000000", "expected": "1024"},
+        {"input": "bin2dec -0", "expected": "0"},
+        {"input": "bin2dec -100011", "expected": "-35"}
+    ],
+    "dec2hex": [
+        {"input": "dec2hex 8", "expected": "8"},
+        {"input": "dec2hex 0", "expected": "0"},
+        {"input": "dec2hex 1", "expected": "1"},
+        {"input": "dec2hex 255", "expected": "FF"},
+        {"input": "dec2hex 1024", "expected": "400"},
+        {"input": "dec2hex -0", "expected": "0"},
+        {"input": "dec2hex -35", "expected": "-23"},
+        {"input": "dec2hex 16", "expected": "10"},
+        {"input": "dec2hex 500", "expected": "1F4"},
+        {"input": "dec2hex -85", "expected": "-55"},
+        {"input": "dec2hex -94", "expected": "-5E"}
+
+    ],
+    "lagrange": [
+        {"input": "lagrange 1 2 2 4 4 3 3", "expected": "4.333"},
+        {"input": "lagrange 1 2 3 4 5 6 7", "expected": "8"},
+        {"input": "lagrange 1 2 2 3 2 4 5", "expected": "Error: x values must be unique for Lagrange interpolation"},
+        {"input": "lagrange 1 2 2 3 1 4 5", "expected": "Error: x values must be unique for Lagrange interpolation"},
+        {"input": "lagrange -1 -2 -3 -4 -5 -6 -7", "expected": "-8"},
+        {"input": "lagrange 45 3.3 7.8 5.678 -12.5", "expected": "6.976"}
+    ],
+    "misc": [
+        {"input": "1 +* 3", "expected": "Error: Unsupported expression"},
+        {"input": "asdfasdfasdf", "expected": "Error: Unsupported expression"}
+    ],
+    "quit": [
+        {"input": "quit", "expected": "Program terminated."}
+    ]
+}
