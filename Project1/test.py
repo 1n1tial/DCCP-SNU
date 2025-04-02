@@ -3,39 +3,34 @@ import sys
 import io
 import importlib
 
-# Import program safely
 program_module = importlib.import_module("project")
 
 def run_test_case(json_file, program_function):
     with open(json_file, 'r') as f:
         test_groups = json.load(f)
 
-    # Flatten test cases (ignore groups)
     test_cases = [case for group in test_groups.values() for case in group]
 
     inputs = [case["input"] for case in test_cases]
     expected_outputs = [case["expected"] for case in test_cases]
 
-    # Redirect input and output
     sys.stdin = io.StringIO("\n".join(inputs) + "\n")
     sys.stdout = io.StringIO()
 
     try:
-        program_function()  # Call `run()` safely
+        program_function() 
         full_output = sys.stdout.getvalue().strip().split("\n")
     finally:
         sys.stdin = sys.__stdin__
         sys.stdout = sys.__stdout__
         
-    # Identify the first input prompt and ignore lines before it
     for i, line in enumerate(full_output):
-        if ">>>" in line:  # Assuming the input prompt looks like '>>>'
-            actual_outputs = full_output[i:]  # Take only relevant output
+        if ">>>" in line: 
+            actual_outputs = full_output[i:]
             break
     else:
-        actual_outputs = full_output  # If no prompt found, keep everything
+        actual_outputs = full_output 
 
-    # Compare outputs
     all_pass = True
     for i, (expected, actual) in enumerate(zip(expected_outputs, actual_outputs)):
         actual = actual[4:]
