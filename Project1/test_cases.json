@@ -8,7 +8,10 @@
         {"input": "1.56 + 2.85", "expected": "4.410"},
         {"input": "1.5 + 2", "expected": "3.500"},
         {"input": "0.0009 + 0", "expected": "0"},
-        {"input": "-0.0001 + 0", "expected": "-0.000" }
+        {"input": "-0.0001 + 0", "expected": "0"},
+        {"input": "1.001 + 0", "expected": "1"},
+        {"input": "3.001 + 1", "expected": "4"},
+        {"input": "-3.001 + 1", "expected": "-2"}
     ],
     "-": [
         {"input": "5 - 2", "expected": "3"},
@@ -132,7 +135,8 @@
         {"input": "lagrange 1 2 2 3 2 4 5", "expected": "Error: x values must be unique for Lagrange interpolation"},
         {"input": "lagrange 1 2 2 3 1 4 5", "expected": "Error: x values must be unique for Lagrange interpolation"},
         {"input": "lagrange -1 -2 -3 -4 -5 -6 -7", "expected": "-8"},
-        {"input": "lagrange 45 3.3 7.8 5.678 -12.5", "expected": "6.976"}
+        {"input": "lagrange 45 3.3 7.8 5.678 -12.5", "expected": "6.976"},
+        {"input": "lagrange 2", "expected": "Error: Invalid number of arguments for Lagrange interpolation"}
     ],
     "misc": [
         {"input": "1 +* 3", "expected": "Error: Unsupported expression"},

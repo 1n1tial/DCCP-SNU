@@ -7,6 +7,7 @@ import random
 import copy
 import time
 import pickle
+import os
 
 # random.seed(0)
 
@@ -90,6 +91,7 @@ def main():
                 code = move(snake, max_index)
             total += snake.score
         print(total)
+        os.makedirs('./res', exist_ok=True)
         with open(f'./res/winner{total}.pkl', 'wb') as f:
             pickle.dump(winner, f)
         if total > 70: break
