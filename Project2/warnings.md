@@ -1,0 +1,1 @@
+- `FileNotFoundError` 방지용 코드: `os.makedirs('./res', exist_ok=True)` (오류를 발견해주신 분: 오영민 님)
